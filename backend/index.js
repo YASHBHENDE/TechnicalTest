@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.routes.js";
+import courseRoutes from "./routes/course.routes.js";
 dotenv.config();
 
 const app = express();
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/courses", courseRoutes);
 
 app.listen(PORT,()=>{
     console.log("3001 active")
